@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.circleEdge{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: aqua;
+    background: linear-gradient(rgb(255, 255, 45), rgb(229, 28, 255));
+    /*box-shadow: rgb(229, 28, 255) 0px 0px 100px;*/
+    animation: edgeMove 1s linear infinite;
+}
+.circleEdge::after{
+    content: '';
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: black 0px 0px 5px 5px;
+}
+.edgeBlur{
+    width: 420px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: aqua;
+    filter: blur(26px);
+    background: linear-gradient(rgb(255, 255, 45), rgb(229, 28, 255));
+}
+
+/*Animation*/
+@keyframes edgeMove { 
+   from{
+        transform: rotate(0deg);
+   }
+   to{
+        transform: rotate(360deg);
+   }
+}
